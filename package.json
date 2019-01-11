@@ -1,0 +1,45 @@
+{
+  "name": "wasmboy-plugin-dmg-palette",
+  "version": "0.0.1",
+  "description": "Plugin for WasmBoy to colorize Monochrome GB ROMs as the original DMG green",
+  "main": "dist/wasmboy-plugin-dmg-palette.cjs.js",
+  "module": "dist/wasmboy-plugin-dmg-palette.esm.js",
+  "browser": "dist/wasmboy-plugin-dmg-palette.umd.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torch2424/wasmboy-plugin-dmg-palette.git"
+  },
+  "keywords": [
+    "wasmboy",
+    "gameboy",
+    "plugin",
+    "dmg",
+    "green",
+    "palette",
+    "color",
+    "colorization",
+    "colorize"
+  ],
+  "author": "Aaron Turner",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/torch2424/wasmboy-plugin-dmg-palette/issues"
+  },
+  "homepage": "https://github.com/torch2424/wasmboy-plugin-dmg-palette#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug",
+    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate --optimize",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized"
+  },
+  "dependencies": {
+    "assemblyscript": "github:assemblyscript/assemblyscript",
+    "canvas-as": "github:jtenner/canvas-as"
+  },
+  "devDependencies": {
+    "rollup": "^1.1.0",
+    "rollup-plugin-babel": "^4.3.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0"
+  }
+}
